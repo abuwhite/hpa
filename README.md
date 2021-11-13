@@ -89,12 +89,12 @@ spec:
     name: app
   minReplicas: 1  # ------------------------------------------------- # 1
   maxReplicas: 10 # ------------------------------------------------- # 2
-  targetCPUUtilizationPercentage: 30  # ----------------------------- # 3
+  targetCPUUtilizationPercentage: 50  # ----------------------------- # 3
 ```
 
 1. **minReplicas** — минимальное количество реплик.
 2. **maxReplicas** — максимальное количество реплик.
-3. **targetCPUUtilizationPercentage** — средняя загрузка CPU, если нагрузка превысит 30%, то модуль будет масштабироваться.
+3. **targetCPUUtilizationPercentage** — средняя загрузка CPU, если нагрузка превысит 50%, то модуль будет масштабироваться.
 </details>
 
 ## Начало работы
@@ -118,7 +118,7 @@ $ make deploy
 $ curl localhost:8080
 ```
 
-Запустите нагрузочный тест для проверки масштабирования:
+Выполните нагрузочный тест с помощью [Hey](https://github.com/rakyll/hey):
 ```sh
 $ make load
 ```

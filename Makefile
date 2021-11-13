@@ -16,4 +16,4 @@ hpa:
 	kubectl apply -f ./resource-manifest/hpa.yaml			# Create the Horizontal Pod Autoscaler
 
 load:
-	kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://app-service-lb:8080; done"
+	hey -z 300s -c 1000 http://localhost:8080
