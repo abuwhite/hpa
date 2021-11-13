@@ -4,7 +4,7 @@ cluster:
 	minikube dashboard
 
 deploy: service-lb
-	minikube tunnel											# Connect to LoadBalancer services
+	minikube tunnel											# Creating network to connect to load balancing services
 
 service-lb: deployment
 	kubectl apply -f ./resource-manifest/service-lb.yaml	# Create the LoadBalancer service
