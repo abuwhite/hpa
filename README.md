@@ -1,7 +1,7 @@
 # Решение тестового задания — Mindbox
 
 <details>
-  <summary>YAML-описание Deployment</summary>
+  <summary>YAML-описание — Deployment</summary>
     
 ```yaml
 apiVersion: apps/v1
@@ -49,7 +49,7 @@ spec:
 </details>
 
 <details>
-  <summary>YAML-описание сервиса типа LoadBalancer</summary>
+  <summary>YAML-описание — LoadBalancer</summary>
     
 ```yaml
 apiVersion: v1
@@ -75,7 +75,7 @@ spec:
 </details>
 
 <details>
-  <summary>YAML-описание сервиса типа HPA</summary>
+  <summary>YAML-описание — Horizontal Pod Autoscaler</summary>
     
 ```yaml
 apiVersion: autoscaling/v1
