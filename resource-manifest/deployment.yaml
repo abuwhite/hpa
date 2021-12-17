@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: app
 spec:
-  replicas: 2
+  replicas: 2 # Запускается с 2-я экземплярами подов
   minReadySeconds: 15
   strategy:
-    type: RollingUpdate
+    type: RollingUpdate # Стратегия обеспечивает нулевое время простоя системы при обновлении
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+      maxUnavailable: 1 # После завершения работы пода ещё один будет выполняться
+      maxSurge: 1 # При переходе на новую версию программы, мы можем добавить в кластер ещё один под
   selector:
     matchLabels:
       app: app
-  template:
+  template: # Объект задаёт шаблон пода, который будет использовать для создания новых подов
     metadata:
       labels:
         app: app
@@ -25,9 +25,9 @@ spec:
         ports:
         - containerPort: 5000
         resources:
-          limits:
+          limits: # Установка лимита памяти и CPU
             cpu: "1"
             memory: "128Mi"
-          requests:
+          requests: # Установка запроса памяти и CPU
             cpu: "0.1"
             memory: "128Mi"

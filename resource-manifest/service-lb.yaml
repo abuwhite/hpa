@@ -4,9 +4,9 @@ metadata:
   name: app-service-lb
 spec:
   selector:
-    app: app
+    app: app # Объект, содержащий сведения о том, с какими подами должен работать сервис
   ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 5000
-  type: LoadBalancer
+  - protocol: TCP # Протокол, используемый сервисом
+    port: 8080 # Порт, по которому сервис принимает запросы
+    targetPort: 5000 # Порт, на который перенаправляются входящие запросы
+  type: LoadBalancer # Тип ресурса для балансировки нагрузки между подами
