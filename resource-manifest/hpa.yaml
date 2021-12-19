@@ -7,6 +7,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: app
-  minReplicas: 1 # Минимальное количество реплик
-  maxReplicas: 10 # Максимальное количество реплик
-  targetCPUUtilizationPercentage: 50 # Средняя загрузка CPU, если нагрузка превысит 50%, то модуль будет масштабироваться
+  # Минимальное количество реплик
+  minReplicas: 1
+  # Максимальное количество реплик
+  maxReplicas: 10
+  # Средняя загрузка CPU, если нагрузка превысит 50%, то модуль будет масштабироваться
+  targetCPUUtilizationPercentage: 50
